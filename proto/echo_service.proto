@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package hellok8;
+
+option go_package = "croz.us/hellok8/echo";
+
+message EchoRequest {
+  string request = 1;
+  int32 count = 2;
+}
+
+message EchoResponse {
+  repeated string response = 1;
+}
+
+service EchoService {
+  rpc Echo (EchoRequest) returns (EchoResponse);
+}
